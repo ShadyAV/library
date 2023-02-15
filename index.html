@@ -23,10 +23,8 @@
             <hr>
             <div class="book">
                 <div id="bookInfo">
-                    <p class="pInfo">Title</p>
-                    <p class="wordBorder">|</p>
-                    <p class="pInfo">Author</p>
-                    <p class="wordBorder">|</p>
+                    <p class="pInfo">Title |</p>
+                    <p class="pInfo">Author |</p>
                     <p class="pInfo">Pages</p>
                 </div>
                 <div id="bookButtons">
@@ -38,6 +36,29 @@
         </div>
     </main>
     <footer>Copyright © avshady 2023</footer>
+    <div id="modalWindow">
+        <form action="">
+            <h2>Add new book</h2>
+            <div class="form-row">
+                <label for="title">Title</label>
+                <input type="text" id="title">
+            </div>
+            <div class="form-row">
+                <label for="author">Author</label>
+                <input type="text" id="author">
+            </div>
+            <div class="form-row">
+                <label for="pages">Pages</label>
+                <input type="text" id="pages">
+            </div>
+            <div id="checkBox">
+                <p>Have you read it?</p>
+                <input type="checkbox">
+            </div>
+            <button>Submit</button>
+        </form>
+    </div>
 </body>
+<script src="main.js"></script>
 
 </html>
