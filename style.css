@@ -21,7 +21,6 @@ header {
     background-color: #1d3557;
     display: flex;
     justify-content: space-between;
-    flex: 2;
     align-items: center;
     padding: 1rem 0;
 }
@@ -60,7 +59,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 16;
+    flex: 1;
     box-shadow: 0 5px 5px -5px #1d3557 inset;
 }
 
@@ -98,7 +97,7 @@ main {
     width: 75vw;
 }
 
-#bookInfo {
+.book-info {
     display: flex;
     flex: 7;
     font-size: 1.5rem;
@@ -111,7 +110,7 @@ main {
     padding: 0.2rem;
 }
 
-#bookButtons {
+.book-buttons {
     display: flex;
     gap: 1rem;
     flex: 3;
@@ -119,42 +118,42 @@ main {
     justify-content: end;
 }
 
-#bookButtons>button {
+.book-buttons>button {
     border: none;
 }
 
-#readButton,
-#removeButton {
+.readButton,
+.removeButton {
     height: 2.5rem;
     width: 6rem;
     font-size: 1.2rem;
     border-radius: 2px;
 }
 
-#readButton {
+.readButton {
     background-color: #1d3557;
     color: #edf2f4;
 }
 
-#removeButton {
+.removeButton {
     background-color: #8f9eb2;
 }
 
-#removeButton:hover {
+.removeButton:hover {
     background-color: #1d3557;
     color: #edf2f4;
 }
 
-#removeButton:active {
+.removeButton:active {
     background-color: #31496c;
 }
 
 footer {
     display: flex;
-    flex: 1;
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
+    margin-bottom: 0.5rem;
 }
 
 hr {
@@ -193,6 +192,13 @@ form>h2 {
     display: flex;
     flex-direction: column;
     margin: 0.5rem;
+}
+
+#alertMessage {
+    display: none;
+    margin: 0 auto;
+    color: red;
+    font-weight: 600;
 }
 
 #checkBox {

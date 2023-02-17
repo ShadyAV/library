@@ -20,19 +20,6 @@
     <main>
         <button id="newBook">New Book</button>
         <div id="bookShelf">
-            <hr>
-            <div class="book">
-                <div id="bookInfo">
-                    <p class="pInfo">Title |</p>
-                    <p class="pInfo">Author |</p>
-                    <p class="pInfo">Pages</p>
-                </div>
-                <div id="bookButtons">
-                    <button id="readButton">Read</button>
-                    <button id="removeButton">Remove</button>
-                </div>
-            </div>
-            <hr>
         </div>
     </main>
     <footer>Copyright © avshady 2023</footer>
@@ -41,21 +28,24 @@
             <h2>Add new book</h2>
             <div class="form-row">
                 <label for="title">Title</label>
-                <input type="text" id="title">
+                <input type="text" id="title" required maxlength="100">
+            </div>
+            <div id="alertMessage">
+                <p>This book already exists</p>
             </div>
             <div class="form-row">
                 <label for="author">Author</label>
-                <input type="text" id="author">
+                <input type="text" id="author" required maxlength="100">
             </div>
             <div class="form-row">
                 <label for="pages">Pages</label>
-                <input type="text" id="pages">
+                <input type="number" id="pages" required max="10000">
             </div>
             <div id="checkBox">
                 <p>Have you read it?</p>
                 <input type="checkbox">
             </div>
-            <button>Submit</button>
+            <button id="submitButton" type="submit">Submit</button>
         </form>
     </div>
 </body>
