@@ -8,6 +8,7 @@ const authorInput = document.getElementById("author");
 const pagesInput = document.getElementById("pages");
 const form = document.getElementsByTagName("form")[0];
 const alertMessage = document.getElementById("alertMessage");
+const checkBox = document.querySelector("input[type=checkbox]");
 
 let myLibrary = [];
 
@@ -27,6 +28,8 @@ function addBookToLibrary(title, author, pages, read) {
 
 function createLayout() {
     bookShelf.textContent = "";
+    const startHr = document.createElement("hr");
+    bookShelf.appendChild(startHr);
     myLibrary.forEach(book => {
         createBook(book);
     });
@@ -70,9 +73,28 @@ function createBook(book) {
     wrapBook.appendChild(newBook);
     wrapBook.appendChild(newHr);
 
+    if (book.read === true) {
+        newReadButton.style.backgroundColor = "#1d355767";
+        newReadButton.style.color = "#000";
+    }
+
     newRemoveButton.addEventListener("click", (event) => {
         myLibrary = myLibrary.filter(e => e.title !== book.title);
         event.target.parentElement.parentElement.parentElement.textContent = "";
+        if (myLibrary.length === 0) bookShelf.textContent = "";
+    });
+
+    newReadButton.addEventListener("click", () => {
+        if (book.read === true) {
+            book.read = false;
+            newReadButton.style.backgroundColor = "#023e8a";
+            newReadButton.style.color = "#edf2f4";
+        }
+        else {
+            book.read = true;
+            newReadButton.style.backgroundColor = "#1d355767";
+            newReadButton.style.color = "#000";
+        }
     });
 }
 
@@ -86,7 +108,7 @@ form.addEventListener("submit", (event) => {
     if (myLibrary.some(e => e.title === titleInput.value)) {
         alertMessage.style.display = "block";
     } else {
-        addBookToLibrary(titleInput.value, authorInput.value, pagesInput.value, true);
+        addBookToLibrary(titleInput.value, authorInput.value, pagesInput.value, checkBox.checked);
         createLayout();
         modalWindow.style.display = "none";
         alertMessage.style.display = "none";

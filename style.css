@@ -131,12 +131,20 @@ main {
 }
 
 .readButton {
-    background-color: #1d3557;
+    background-color: #023e8a;
     color: #edf2f4;
 }
 
+.readButton:hover {
+    opacity: 0.9;
+}
+
+.readButton:active {
+    opacity: 0.7;
+}
+
 .removeButton {
-    background-color: #8f9eb2;
+    background-color: #1d355767;
 }
 
 .removeButton:hover {
